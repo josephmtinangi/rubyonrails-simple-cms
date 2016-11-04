@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104170619) do
+ActiveRecord::Schema.define(version: 20161104212129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,38 @@ ActiveRecord::Schema.define(version: 20161104170619) do
     t.datetime "updated_at",                               null: false
     t.string   "username",        limit: 25
     t.index ["username"], name: "index_admin_users_on_username", using: :btree
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.string   "name"
+    t.string   "permalink"
+    t.integer  "position"
+    t.boolean  "visible",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["permalink"], name: "index_pages_on_permalink", using: :btree
+    t.index ["subject_id"], name: "index_pages_on_subject_id", using: :btree
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer  "page_id"
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visible",      default: false
+    t.string   "content_type"
+    t.text     "content"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["page_id"], name: "index_sections_on_page_id", using: :btree
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visible",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
