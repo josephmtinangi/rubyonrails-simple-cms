@@ -1,2 +1,45 @@
-<h1>Sections#index</h1>
-<p>Find me in app/views/sections/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <% if !flash[:notice].blank? %>
+          <div class="alert alert-success">
+            <%= flash[:notice] %>
+          </div>
+      <% end %>
+
+      <div class="sections index">
+        <h2>Sections</h2>
+
+        <%= link_to("Add new", new_section_path, class: "new action") %>
+
+        <table class="table table-hover table-striped">
+          <tr>
+            <thead>
+            <th>#</th>
+            <th>Page ID</th>
+            <th>Name</th>
+            <th>Visible?</th>
+            <th colspan="3">Actions</th>
+            </thead>
+          </tr>
+          <tbody>
+          <% @sections.each do |section| %>
+              <tr>
+                <td><%= section.position %></td>
+                <td><%= section.page_id %></td>
+                <td><%= section.name %></td>
+                <td><%= section.visible ? 'Yes' : 'No' %></td>
+                <td><%= link_to("Show", section_path(section), class: "show action") %></td>
+                <td><%= link_to("Edit", edit_section_path(section), class: "edit action") %></td>
+                <td><%= link_to("Delete", delete_section_path(section), class: "delete action") %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+</div>
