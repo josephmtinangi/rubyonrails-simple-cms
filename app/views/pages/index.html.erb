@@ -1,2 +1,37 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="pages index">
+        <h2>Pages</h2>
+        <table class="table table-hover">
+          <tr>
+            <thead>
+            <th>Position</th>
+            <th>Name</th>
+            <th>Permalink</th>
+            <th>Visible</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th colspan="3">Actions</th>
+            </thead>
+          </tr>
+          <tbody>
+          <% @pages.each do |page| %>
+              <tr>
+                <td><%= page.position %></td>
+                <td><%= page.name %></td>
+                <td><%= page.permalink %></td>
+                <td><%= page.visible ? 'Yes' : 'No' %></td>
+                <td><%= page.created_at %></td>
+                <td><%= page.updated_at %></td>
+                <td><%= link_to("Show", "#", class: "action show") %></td>
+                <td><%= link_to("Edit", "#", class: "action edit") %></td>
+                <td><%= link_to("Delete", "#", class: "action delete") %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
