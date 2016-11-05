@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Root route
   root "demo#index"
 
-  resource :subjects do
+  resources :subjects do
     member do
       get :delete
     end

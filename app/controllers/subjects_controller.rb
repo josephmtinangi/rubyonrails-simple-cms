@@ -1,5 +1,9 @@
 class SubjectsController < ApplicationController
   def index
+    # @subjects = Subject.all
+    # @subjects = Subject.order(:position)
+    @subjects = Subject.sorted
+    # render('index')
   end
 
   def show
