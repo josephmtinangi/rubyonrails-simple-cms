@@ -23,7 +23,7 @@
                 <td><%= subject.name %></td>
                 <td><%= subject.visible ? 'Yes' : 'No' %></td>
                 <td><%= subject.pages.size %></td>
-                <td><%= link_to("Show", "#", :class => "action show") %></td>
+                <td><%= link_to("Show", subject_path(subject), :class => "action show") %></td>
                 <td><%= link_to("Edit", "#", :class => "action edit") %></td>
                 <td><%= link_to("Delete", "#", :class => "action delete") %></td>
               </tr>
