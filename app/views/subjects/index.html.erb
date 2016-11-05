@@ -25,7 +25,7 @@
                 <td><%= subject.pages.size %></td>
                 <td><%= link_to("Show", subject_path(subject), :class => "action show") %></td>
                 <td><%= link_to("Edit", edit_subject_path(subject), :class => "action edit") %></td>
-                <td><%= link_to("Delete", "#", :class => "action delete") %></td>
+                <td><%= link_to("Delete", delete_subject_path(subject), :class => "action delete") %></td>
               </tr>
           <% end %>
           </tbody>
