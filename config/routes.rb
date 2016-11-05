@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Root route
-  root "demo#index"
+  root "subjects#index"
 
   resources :subjects do
     member do
