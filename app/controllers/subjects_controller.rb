@@ -6,7 +6,6 @@ class SubjectsController < ApplicationController
     # @subjects = Subject.all
     # @subjects = Subject.order(:position)
     @subjects = Subject.sorted
-    @page_title = "All Subjects"
     # render('index')
   end
 
