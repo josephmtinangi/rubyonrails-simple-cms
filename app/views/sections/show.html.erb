@@ -2,12 +2,6 @@
   <div class="row">
     <div class="col-sm-12">
 
-      <% if !flash[:notice].blank? %>
-          <div class="alert alert-success">
-            <%= flash[:notice] %>
-          </div>
-      <% end %>
-
       <%= link_to("<< Back to list", sections_path, class: "back-link") %>
 
       <div class="sections show">
