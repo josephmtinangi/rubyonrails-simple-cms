@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Simple CMS - <%= @page_title || "Admin Area" %></title>
+
+  <style>
+    span.status {
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin: 0.25em auto;
+      padding: 0;
+      border: 1px solid #000000;
+    }
+
+    span.status.true {
+      background: green;
+      color: greenyellow
+    }
+
+    span.status.false {
+      background: red;
+      color: red;
+    }
+  </style>
+
 </head>
 <body>
 
