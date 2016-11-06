@@ -1,4 +1,7 @@
 class SubjectsController < ApplicationController
+
+  layout "admin"
+
   def index
     # @subjects = Subject.all
     # @subjects = Subject.order(:position)
