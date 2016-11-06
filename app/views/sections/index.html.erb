@@ -1,23 +1,28 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Sections</h1>
+    <p class="lead">These are all your sections.</p>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
 
 
       <div class="sections index">
-        <h2>Sections</h2>
 
-        <%= link_to("Add new", new_section_path, class: "new action") %>
+        <%= link_to("Add new", new_section_path, class: "btn btn-outline-primary") %>
 
         <table class="table table-hover table-striped">
+          <thead class="thead-inverse">
           <tr>
-            <thead>
             <th>#</th>
             <th>Page ID</th>
             <th>Name</th>
             <th>Visible?</th>
             <th colspan="3">Actions</th>
-            </thead>
           </tr>
+          </thead>
           <tbody>
           <% @sections.each do |section| %>
               <tr>
